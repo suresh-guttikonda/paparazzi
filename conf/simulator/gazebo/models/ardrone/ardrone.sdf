@@ -7,8 +7,8 @@
       <velocity_decay>
         <linear>0.001</linear>
       </velocity_decay>
-      
-    
+
+
       <inertial><!-- Converted to SI from Paparazzi's ARDrone model for JSBsim -->
         <mass>0.4</mass>
         <inertia>
@@ -35,8 +35,12 @@
             <size>0.2 0.2 0.05</size>
           </box>
         </geometry>
+        <material>
+          <diffuse>0.82 0.07 0.07 1</diffuse>
+          <ambient>0.82 0.07 0.07 1</ambient>
+        </material>
       </visual>
-      
+
       <sensor name="contactsensor" type="contact">
         <contact>
           <collision>collision</collision>
@@ -65,6 +69,10 @@
             <length>0.05</length>
           </cylinder>
         </geometry>
+        <material>
+          <diffuse>0.82 0.07 0.07 1</diffuse>
+          <ambient>0.82 0.07 0.07 1</ambient>
+        </material>
       </visual>
     </link>
 
@@ -93,6 +101,10 @@
             <length>0.05</length>
           </cylinder>
         </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+          <ambient>0.1 0.1 0.1 1</ambient>
+        </material>
       </visual>
     </link>
 
@@ -121,6 +133,10 @@
             <length>0.05</length>
           </cylinder>
         </geometry>
+        <material>
+          <diffuse>0.82 0.07 0.07 1</diffuse>
+          <ambient>0.82 0.07 0.07 1</ambient>
+        </material>
       </visual>
     </link>
 
@@ -149,6 +165,10 @@
             <length>0.05</length>
           </cylinder>
         </geometry>
+        <material>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+          <ambient>0.1 0.1 0.1 1</ambient>
+        </material>
       </visual>
     </link>
 
@@ -188,8 +208,8 @@
           </clip>
           <noise>
             <type>gaussian</type>
-            <!-- Noise is sampled independently per pixel on each frame. That pixel's 
-              noise value is added to each of its color channels, which at that point lie 
+            <!-- Noise is sampled independently per pixel on each frame. That pixel's
+              noise value is added to each of its color channels, which at that point lie
               in the range [0,1]. -->
             <mean>0.0</mean>
             <stddev>0.007</stddev>
@@ -197,12 +217,12 @@
         </camera>
       </sensor>
     </link>
-    
+
     <joint name="front_camera_joint" type="fixed">
       <parent>chassis</parent>
       <child>front_camera</child>
     </joint>
-    
+
     <link name="bottom_camera">
       <pose>0 0 -.03 0 1.57 0</pose>
       <inertial>
@@ -231,8 +251,8 @@
           </clip>
           <noise>
             <type>gaussian</type>
-            <!-- Noise is sampled independently per pixel on each frame. That pixel's 
-              noise value is added to each of its color channels, which at that point lie 
+            <!-- Noise is sampled independently per pixel on each frame. That pixel's
+              noise value is added to each of its color channels, which at that point lie
               in the range [0,1]. -->
             <mean>0.0</mean>
             <stddev>0.007</stddev>
@@ -240,7 +260,7 @@
         </camera>
       </sensor>
     </link>
-    
+
     <joint name="bottom_camera_joint" type="fixed">
       <parent>chassis</parent>
       <child>bottom_camera</child>
